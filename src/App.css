@@ -1,0 +1,546 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+* {
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+::-webkit-input-placeholder{
+  color: black;
+}
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+ 
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  box-sizing: border-box;
+  background-color: #fff;
+  flex: 0.9;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.150);
+  padding-top: 0.5%;
+ 
+  display: flex;
+  justify-content: start;
+}
+
+.hsb-1 {
+  background-color: #fff;
+  margin-left: 2%;
+}
+
+.hsb-1 .fa-3x{
+  fill: #008ad3;
+  font-size: 50px;
+}
+
+.hsb-2 {
+  background-color: #f0f2f5;
+  width: 20%;
+  height: 60%;
+  border-radius: 30px;
+  margin-top: 0.3%;
+  padding: 0.5%;
+  margin-left: 0.5%;
+  
+  display: flex;
+  align-items: center;
+}
+
+.hsb-2 > .FaSearch{
+  background-color: #f0f2f5;
+  color: rgb(27, 27, 27);
+}
+
+.hsb-2 .hsb2-input{
+  background-color: #f0f2f5;
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: black;
+  margin-left: 2%;
+}
+
+.hsb-3{
+  width: 49%;
+  margin-left: 3%;
+  padding: 0.5%;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.hsb-3 .hsb-3-icon{
+  background-color: #fff;
+  margin-left:12%;
+  font-size: 22px;
+  color: rgb(27, 27, 27);
+}
+
+.hsb-4{
+  background-color: #fff;
+  width: 25%;
+
+  display: flex;
+  align-items: center;
+  justify-content: start
+}
+
+.hsb-4 > div{
+  margin-left: 2.5%;
+}
+
+.hsb-4 > div > i{ 
+  font-size: 22px;
+}
+
+.dp {
+  /* background-color: #000000; */
+
+  background-color: #fff;
+  width: 25%;
+  height: 45%;
+  border-radius: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dp > img{
+  background-color: #000000;
+  flex: 7;
+  border-radius: 100px;
+}
+
+.dp > p{
+  padding-left: 10%;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.app-icon {
+  background-color: #dadde1;
+  width: 13%;
+  height: 75%;
+  border-radius: 100px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-icon > i {
+  color: rgb(27, 27, 27);
+  background-color: #dadde1;
+}
+
+.msg-icon {
+  background-color: #dadde1;
+  width: 13%;
+  height: 75%;
+  border-radius: 100px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-icon > i {
+  color: rgb(27, 27, 27);
+  background-color: #dadde1;
+}
+
+.bell-icon {
+  background-color: #dadde1;
+  width: 13%;
+  height: 75%;
+  border-radius: 100px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bell-icon > i {
+  color: rgb(27, 27, 27);
+  background-color: #dadde1;
+}
+
+.drop-icon {
+  background-color: #dadde1;
+  width: 13%;
+  height: 75%;
+  border-radius: 100px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-icon > i {
+  color: rgb(27, 27, 27);
+  background-color: #dadde1;
+}
+
+.body {
+  box-sizing: border-box;
+  background-color: #f0f2f5;
+  flex: 9;
+
+  display: flex;
+}
+
+/* ################################### BOX 1 STYLING ############################## */
+
+.bsb-1{
+  /* background-color: aqua; */
+  flex: 2;
+  border-bottom:solid 1px rgba(0, 0, 0, 0.150) ;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sdp {
+  width: 100%;
+  height: 10%;
+  border-radius: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sdp > img{
+  margin-left: 5%;
+  border-radius: 100px;
+}
+
+.sdp > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.f-icon {
+  margin-top: 5%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.f-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #008ad3;;
+}
+
+.f-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.g-icon {
+  margin-top: 8%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.g-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #008ad3;;
+}
+
+.g-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.mart-icon {
+  margin-top: 8%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.mart-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #008ad3;;
+}
+
+.mart-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.watch-icon {
+  margin-top: 8%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.watch-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #008ad3;;
+}
+
+.watch-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.memorie-icon {
+  margin-top: 8%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.memorie-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #008ad3;;
+}
+
+.memorie-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.see-icon {
+  margin-top: 8%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.see-icon > i{
+  font-size: 22px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: rgb(27, 27, 27)
+}
+
+.see-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.bsb-1 > p{
+  color: gray;
+  margin-top: 2%;
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.bowling-icon {
+  width: 100%;
+  height: 10%;
+  border-radius: 30px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.bowling-icon > img{
+  margin-left: 5%;
+  border-radius: 100px;
+}
+
+.bowling-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.omg-icon {
+  margin-top: 3%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.omg-icon > i{
+  font-size: 28px;
+  margin-left: 5%;
+  border-radius: 100px;
+  color: #000000;;
+}
+
+.omg-icon > p{
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+
+/* ########################################### BOX 2 STYLING ###################################### */
+
+.bsb-2{
+  /* background-color: green; */
+  flex: 5;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.main-box{
+  /* background-color: gray; */
+  flex: 5;
+  height: 40%;
+  padding: 2% 0;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.story-box1, .story-box2, .story-box3, .story-box4, .story-box5{
+  /* background-color: #008ad3; */
+  height: 100%;
+  width: 40%;
+  border-radius: 30px;
+  
+display: flex;  
+}
+
+.stp{
+  border-radius: 30px;
+}
+
+.main-box2{
+  background-color: #fff;
+  height: 30%;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 30px;
+  
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+
+/* 
+.main-box2 > input{
+  background-color: #dadde1;
+  height: 30%;
+  width: 80%;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size:18px;
+  
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+} */
+
+/* ########################################## BOX 3 STYLING ####################################### */
+
+.bsb-3{
+  /* background-color: red; */
+  flex: 2;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact > p{
+  color: gray;
+  margin-top: 5%;
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.contact > p > .v-icon{
+  margin-left: 30%;
+
+}
+
+.contact > p > i{
+  margin-left: 5%;
+
+}
