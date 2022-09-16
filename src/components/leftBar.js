@@ -1,6 +1,5 @@
 import { FaDizzy, FaUserFriends, FaStore, FaHistory, FaCaretDown } from "react-icons/fa";
 import { MdGroups, MdOutlinePersonalVideo } from "react-icons/md";
-// import { TbGridDots } from "react-icons/tb";
 const leftBar = () => {
     return (
         <div className="bsb-1">

@@ -1,6 +1,3 @@
-// import { FaBell, FaSearch, FaFacebook, FaHome, FaUserFriends, FaStore, FaChessBoard, FaFacebookMessenger } from "react-icons/fa";
-// import { MdOutlinePersonalVideo } from "react-icons/md";
-// import { TbGridDots } from "react-icons/tb";
 const storybox = () => {
     return (
         <div className="main-box">

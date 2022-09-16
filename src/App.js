@@ -4,8 +4,7 @@ import LeftBar from './components/leftBar';
 import Storybox from './components/storybox';
 import RightBar from './components/rightBar';
 import Content from './components/content';
-// import Sidebar from './components/sidebar';
-// import Menubar from './components/menubar';
+
 
 const App = () => {
   return (

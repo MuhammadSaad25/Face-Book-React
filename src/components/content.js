@@ -1,6 +1,4 @@
 import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
-// import { MdOutlinePersonalVideo } from "react-icons/md";
-// import { TbGridDots } from "react-icons/tb";
 import moment from 'moment';
 
 let Post = ({ profilePhoto, name, postDate, postText, postImage }) => (
