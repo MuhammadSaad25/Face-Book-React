@@ -52,6 +52,7 @@ body {
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
+  /* overflow-y: scroll; */
 
   display: flex;
   flex-direction: column;
@@ -173,16 +174,26 @@ body {
 .body {
   box-sizing: border-box;
   background-color: #f0f2f5;
-  flex: 9;
+  /* flex: 9; */
+  padding-top:20px ;
+
 
   display: flex;
+  /* justify-content: space-evenly; */
 }
 
 /* ################################### BOX 1 STYLING ############################## */
 
 .bsb-1 {
-  /* background-color: aqua; */
+  /* background-color: #fff; */
+  position: sticky;
+  height: 85vh;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.419);
+  border-radius: 5px;
+  margin:0 10px;
+  padding: 10px 0;
   flex: 2;
+
   border-bottom: solid 1px rgba(0, 0, 0, 0.150);
 
   display: flex;
@@ -207,7 +218,7 @@ body {
 .sdp>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .f-icon {
@@ -218,18 +229,17 @@ body {
   justify-content: start;
 }
 
-.f-icon>i {
-  font-size: 22px;
+.f-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #008ad3;
-  ;
+  fill: #008ad3;
 }
 
 .f-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .g-icon {
@@ -240,18 +250,17 @@ body {
   justify-content: start;
 }
 
-.g-icon>i {
-  font-size: 22px;
+.g-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #008ad3;
-  ;
+  fill: #008ad3;
 }
 
 .g-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .mart-icon {
@@ -262,18 +271,17 @@ body {
   justify-content: start;
 }
 
-.mart-icon>i {
-  font-size: 22px;
+.mart-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #008ad3;
-  ;
+  fill: #008ad3;
 }
 
 .mart-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .watch-icon {
@@ -284,18 +292,17 @@ body {
   justify-content: start;
 }
 
-.watch-icon>i {
-  font-size: 22px;
+.watch-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #008ad3;
-  ;
+  fill: #008ad3;
 }
 
 .watch-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .memorie-icon {
@@ -306,18 +313,17 @@ body {
   justify-content: start;
 }
 
-.memorie-icon>i {
-  font-size: 22px;
+.memorie-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #008ad3;
-  ;
+  fill: #008ad3;
 }
 
 .memorie-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .see-icon {
@@ -328,17 +334,17 @@ body {
   justify-content: start;
 }
 
-.see-icon>i {
-  font-size: 22px;
+.see-icon>.icon {
+  font-size: 35px;
   margin-left: 5%;
   border-radius: 100px;
-  color: rgb(27, 27, 27)
+  fill: rgb(27, 27, 27)
 }
 
 .see-icon>p {
   padding-left: 5%;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .bsb-1>p {
@@ -378,11 +384,11 @@ body {
   justify-content: start;
 }
 
-.omg-icon>i {
+.omg-icon>.omg {
   font-size: 28px;
   margin-left: 5%;
   border-radius: 100px;
-  color: #000000;
+  fill: #000000;
   ;
 }
 
@@ -395,21 +401,39 @@ body {
 
 /* ########################################### BOX 2 STYLING ###################################### */
 
-.bsb-2 {
-  /* background-color: green; */
+.bsb-2p {
+  height: 85vh;
+  background-color: #fff;
+  /* overflow-y: scroll; */
+  /* box-shadow: 0px 0px 10px 1px black; */
   flex: 5;
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-content: center;
+  flex-direction: column;
+}
+
+.bsb-2 {
+  height: 40%;
+  background-color: #fff;
+  overflow-y: scroll;
+  /* box-shadow: 0px 0px 10px 1px black; */
+  flex: 5;
+
+  display: flex;
+  justify-content: start;
   align-content: center;
   flex-direction: column;
 }
 
 .main-box {
-  /* background-color: gray; */
-  flex: 5;
-  height: 40%;
-  padding: 2% 0;
+  height: 30%;
+  align-content: center;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.447);
+  border-radius: 5px;
+  /* margin: 5px; */
+  padding-top: 10px;
 
   display: flex;
   justify-content: center;
@@ -426,8 +450,7 @@ body {
   height: 100%;
   width: 40%;
   border-radius: 30px;
-
-  display: flex;
+  text-align: center;
 }
 
 .stp {
@@ -469,7 +492,11 @@ body {
 /* ########################################## BOX 3 STYLING ####################################### */
 
 .bsb-3 {
-  /* background-color: red; */
+  height: 85vh;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.419);
+  border-radius: 5px;
+  margin:0 10px;
+  padding: 10px 0; 
   flex: 2;
 
   display: flex;
@@ -492,4 +519,48 @@ body {
 .contact>p>i {
   margin-left: 5%;
 
+}
+
+/* ********************** post style************************** */
+
+
+.post {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 20px 2px black;
+}
+
+.post .postHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post .profilePhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.post .postImage{
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.post .postFooter{
+  display: flex;
+  justify-content: space-around;
+}
+
+.page{
+  /* overflow-y: scroll; */
+  /* height: 40%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
