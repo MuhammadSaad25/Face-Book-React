@@ -404,6 +404,7 @@ body {
 .bsb-2p {
   height: 85vh;
   background-color: #fff;
+  overflow: hidden;
   /* overflow-y: scroll; */
   /* box-shadow: 0px 0px 10px 1px black; */
   flex: 5;
@@ -525,13 +526,13 @@ body {
 
 
 .post {
-  border: 1px solid black;
+  /* border: 1px solid black;  */
   border-radius: 20px;
   width: 80%;
   padding: 20px;
   margin: 20px;
   background-color: whitesmoke;
-  box-shadow: 0px 0px 20px 2px black;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.496);
 }
 
 .post .postHeader {
@@ -547,14 +548,20 @@ body {
   margin-right: 10px;
 }
 .post .postImage{
-  width: 300px;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 
 }
+
 .post .postFooter{
   display: flex;
   justify-content: space-around;
+}
+.post .postFooter div{
+  font-size: 22px;
+  font-weight: 500;
+  color: gray;
 }
 
 .page{
@@ -563,4 +570,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.post-icon{
+  font-size: 25px;
+  fill: gray;
 }
