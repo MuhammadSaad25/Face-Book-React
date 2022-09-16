@@ -362,7 +362,6 @@ body {
 .bsb-2p {
   height: 85vh;
   background-color: #fff;
-  overflow: hidden;
   flex: 5;
 
   display: flex;
@@ -381,6 +380,10 @@ body {
   justify-content: start;
   align-content: center;
   flex-direction: column;
+}
+
+::-webkit-scrollbar{
+  width: 0;
 }
 
 .main-box {
