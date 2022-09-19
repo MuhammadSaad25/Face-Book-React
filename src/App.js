@@ -4,12 +4,25 @@ import LeftBar from './components/leftBar';
 import Storybox from './components/storybox';
 import RightBar from './components/rightBar';
 import Content from './components/content';
+import { useState } from 'react';
 
 
 const App = () => {
+  const [themeMode, setThemeMode] = useState("dark")
+  const toggleThemeMode = () => {
+    // console.log("test")
+    if (themeMode === "dark") {
+    setThemeMode("light")
+    }
+    else{
+    setThemeMode("dark")
+    }
+    console.log(themeMode)
+  }
+ 
   return (
-    <div className="App">
-      <Header />
+    <div className={`App ${themeMode==="dark"?"dark":"light"}`}>
+      <Header  toggleThemeMode={toggleThemeMode} />
 
       <div className='body'>
         <LeftBar />
