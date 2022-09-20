@@ -10,19 +10,18 @@ import { useState } from 'react';
 const App = () => {
   const [themeMode, setThemeMode] = useState("dark")
   const toggleThemeMode = () => {
-    // console.log("test")
+    // shehzad
     if (themeMode === "dark") {
     setThemeMode("light")
     }
     else{
     setThemeMode("dark")
     }
-    console.log(themeMode)
   }
  
   return (
     <div className={`App ${themeMode==="dark"?"dark":"light"}`}>
-      <Header  toggleThemeMode={toggleThemeMode} />
+      <Header  toggleThemeMode={toggleThemeMode} s={themeMode} />
 
       <div className='body'>
         <LeftBar />

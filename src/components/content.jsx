@@ -22,10 +22,10 @@ let Post = ({ profilePhoto, name, postDate, postText, postImage }) => (
       <div><FaRegThumbsUp className="post-icon" />like </div>
       <div><FaRegCommentAlt className="post-icon" />comment</div>
       <div><FaShare className="post-icon" />share</div>
-    </div >
+    </div>
     <hr />
 
-  </div >
+  </div>
 );
 
 
