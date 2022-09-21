@@ -12,26 +12,31 @@ const App = () => {
   const toggleThemeMode = () => {
     // shehzad
     if (themeMode === "dark") {
-    setThemeMode("light")
+      setThemeMode("light")
     }
-    else{
-    setThemeMode("dark")
+    else {
+      setThemeMode("dark")
     }
   }
- 
+
   return (
-    <div className={`App ${themeMode==="dark"?"dark":"light"}`}>
-      <Header  toggleThemeMode={toggleThemeMode} s={themeMode} />
+    <div className={`App ${themeMode === "dark" ? "dark" : "light"}`}>
+      <Header toggleThemeMode={toggleThemeMode} s={themeMode} />
 
       <div className='body'>
         <LeftBar />
+
         <div className='bsb-2p'>
+
           <div className='bsb-2'>
             <Storybox />
             <Content />
           </div>
+
         </div>
+
         <RightBar />
+
       </div>
 
     </div>

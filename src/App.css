@@ -1,21 +1,18 @@
 .dark {
   --bg-color: rgb(21, 32, 43);
   --main-color: white;
-  --twitter-color: #1A8CD8;
-  --lightGray-color: #273340;
+  --icon-color: #fff;
 
 }
 
 .light {
   --bg-color: rgb(247, 247, 247);
   --main-color: black;
-  --twitter-color: #1A8CD8;
-  --lightGray-color: #E7E7E8;
+  --icon-color: #000000;
 }
 
 
 .App {
-  /* display: flex; */
   height: 100vh;
   width: 100vw;
   background-color: var(--bg-color);
@@ -32,14 +29,13 @@
 
 * {
   background-color: var(--bg-color);
-  /* background-color: #f0f2f5; */
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
 ::-webkit-input-placeholder {
-  /* color: black; */
+  color: var(--main-color);
 }
 
 
@@ -55,8 +51,6 @@ body {
 .header {
   box-sizing: border-box;
   background-color: var(--bg-color);
-
-  /* background-color: #fff; */
   flex: 0.9;
   border-bottom: solid 1px rgba(0, 0, 0, 0.150);
   padding-top: 0.5%;
@@ -66,7 +60,6 @@ body {
 }
 
 .hsb-1 {
-  /* background-color: #fff; */
   margin-left: 2%;
 }
 
@@ -76,7 +69,6 @@ body {
 }
 
 .hsb-2 {
-  /* background-color: #f0f2f5; */
   width: 20%;
   height: 60%;
   border-radius: 30px;
@@ -88,13 +80,7 @@ body {
   align-items: center;
 }
 
-.hsb-2>.FaSearch {
-  /* background-color: #f0f2f5; */
-  /* color: rgb(27, 27, 27); */
-}
-
 .hsb-2 .hsb2-input {
-  /* background-color: #f0f2f5; */
   flex: 1;
   height: 100%;
   border: none;
@@ -108,7 +94,6 @@ body {
   width: 49%;
   margin-left: 3%;
   padding: 0.5%;
-  /* background-color: #fff; */
 
   display: flex;
   justify-content: start;
@@ -116,14 +101,11 @@ body {
 }
 
 .hsb-3 .hsb-3-icon {
-  /* background-color: #fff; */
   margin-left: 12%;
   font-size: 22px;
-  /* color: rgb(27, 27, 27); */
 }
 
 .hsb-4 {
-  /* background-color: #fff; */
   width: 25%;
 
   display: flex;
@@ -132,7 +114,6 @@ body {
 }
 
 .hsb-4 div {
-  /* background-color: #dadde1; */
   width: 40px;
   height: 40px;
   border-radius: 40px;
@@ -143,14 +124,14 @@ body {
 }
 
 .hsb-4 div .icon {
-  /* color: rgb(27, 27, 27); */
-  /* background-color: #dadde1; */
   font-size: 22px;
 }
-.hsb-4>button{
-  color:  var(--main-color);
-  background-color:  var(--bg-color);
+
+.hsb-4>button {
+  color: var(--main-color);
+  background-color: var(--bg-color);
 }
+
 .dp {
   height: 40px;
   width: 40px;
@@ -167,9 +148,17 @@ body {
 
 .body {
   box-sizing: border-box;
-  /* background-color: #f0f2f5; */
   padding-top: 20px;
   display: flex;
+}
+
+.dp button {
+  border: none;
+}
+
+.dp button .dicon {
+  fill: var(--icon-color);
+  font-size: 30px;
 }
 
 /* ################################### BOX 1 STYLING ############################## */
@@ -479,7 +468,6 @@ body {
   width: 80%;
   padding: 20px;
   margin: 20px;
-  /* background-color: whitesmoke; */
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.496);
 }
 

@@ -6,7 +6,7 @@ import { TbGridDots } from "react-icons/tb";
 import { BsFillMoonFill, BsSun } from "react-icons/bs";
 
 
-const header = ({toggleThemeMode,s}) => {
+const header = ({ toggleThemeMode, s }) => {
     return (
         <div className="header">
             <div className="hsb-1">
@@ -46,7 +46,11 @@ const header = ({toggleThemeMode,s}) => {
                 </div>
 
 
-                <button type="button" onClick={toggleThemeMode}>{(s === "light") ? <BsFillMoonFill /> : <BsSun />}</button>
+                <div type="" className="dp">
+                    <button type="button" onClick={toggleThemeMode}>{(s === "light") ? <BsFillMoonFill className="dicon" /> : <BsSun className="dicon" />}</button>
+                </div>
+
+
 
 
 
