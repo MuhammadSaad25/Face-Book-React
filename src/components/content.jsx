@@ -1,13 +1,19 @@
 import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
 import moment from 'moment';
+import { useState } from "react";
 
-let Post = ({ profilePhoto, name, postDate, postText, postImage }) => (
+let Post = () => {
+  // const [profilePhoto,setProfilePhoto] =useState ([])
+  // const [profilePhoto, name, postDate, postText, postImage ]
+  const [postText,setPostText] = useState([])
+  
+  return(
   <div className='post'>
     <div className='postHeader'>
-      <img className='profilePhoto' src={profilePhoto} alt="profile" />
+      {/* <img className='profilePhoto' src={profilePhoto} alt="profile" /> */}
       <div>
-        {name} <br />
-        {moment(postDate).fromNow()}
+        {/* {name} <br /> */}
+        {/* {moment(postDate).fromNow()} */}
       </div>
     </div>
 
@@ -15,7 +21,7 @@ let Post = ({ profilePhoto, name, postDate, postText, postImage }) => (
       {postText}
     </div>
 
-    <img className='postImage' src={postImage} alt="post" />
+    {/* <img className='postImage' src={postImage} alt="post" /> */}
 
     <hr />
     <div className='postFooter'>
@@ -27,6 +33,7 @@ let Post = ({ profilePhoto, name, postDate, postText, postImage }) => (
 
   </div>
 );
+}
 
 
 const content = () => {
@@ -34,13 +41,13 @@ const content = () => {
     <div className='page'>
 
       <Post
-        name="Shëìkh Mühämmâd Ärëéb (شیخ)"
-        profilePhoto="./imgs/cp-1_28x28.jpg"
-        postDate="16 sep 2022"
-        postImage="./imgs/post1.jfif"
+        // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
+        // profilePhoto="./imgs/cp-1_28x28.jpg"
+        // postDate="16 sep 2022"
+        // postImage="./imgs/post1.jfif"
         postText="No Comments "
       />
-      <Post
+      {/* <Post
         name="Zoomy Khan"
         profilePhoto="./imgs/cp-3_28x28.jpg"
         postDate="15 sep 2022"
@@ -61,7 +68,7 @@ const content = () => {
         postImage="./imgs/post4.jpeg"
         postText="Dear Youth Of Pakistan!
         As we all knows that requirement of Web Developers and other Tech Graduates has been increasing in International and local  IT industry with every passing day although we (Pakistanis) are doing great work in our capacity but still there's a huge gap between market requirement and availability of quality developers. So, we have decided to launch an other batch of Web and Mobile Application Development in all our campuses across Pakistan for Males and Females also. "
-      />
+      /> */}
 
 
     </div>
