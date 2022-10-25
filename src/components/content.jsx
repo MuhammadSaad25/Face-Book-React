@@ -1,24 +1,53 @@
 // import moment from 'moment';
 import Post from './post'
 import { useState } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore"; 
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAxYIc8w-tPw_MPCv7033gzFY7KUCw1iCM",
+  authDomain: "fakebook-database.firebaseapp.com",
+  projectId: "fakebook-database",
+  storageBucket: "fakebook-database.appspot.com",
+  messagingSenderId: "96515663185",
+  appId: "1:96515663185:web:d2ebdebc4fbe862ab31f70"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
 
 
 const Content = () => {
   const [postText, setPostText] = useState("")
-  const [posts, setPosts] = useState({})
+  // const [posts, setPosts] = useState({})
 
 
-  const savePost = (e) => {
+  const savePost = async(e) => {
     e.preventDefault();
     console.log("postText", postText)
+    try {
+      const docRef = await addDoc(collection(db, "posts"), {
+        text: postText,
+        createdon: new Date().getTime(), 
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+    
 
-
-  }
+  } 
 
   return (
     <div className='page'>
-      <form onClick={savePost}>
+      <form onSubmit={savePost}>
         <input
           placeholder="what in your mind"
           onChange={(e) => {
@@ -30,6 +59,9 @@ const Content = () => {
         <button type="submit">post</button>
       </form>
 
+
+
+{/* 
       <div className="container">
         
         {posts.map(eachPost => (
@@ -39,7 +71,7 @@ const Content = () => {
             <img src={eachPost?.image?.thumbnail?.contentUrl?.replace("&pid=News", "")?.replace("pid=News&", "")?.replace("pid=News", "")} alt="" />
           </div>
           <div className="data-div">
-            {/* <div>{moment(eachPost?.datePublished)?.format('DD MMMM  h:mm a')}</div> */}
+            <div>{moment(eachPost?.datePublished)?.format('DD MMMM  h:mm a')}</div>
             <h3>{eachPost?.name}</h3>
             <p>{eachPost?.description}</p>
             <a className="red1" href={eachPost?.url} target="_blank" rel="noreferrer">Read More</a>
@@ -47,7 +79,7 @@ const Content = () => {
         </div>
 
       ))}
-      </div>
+      </div> */}
 
 
 
