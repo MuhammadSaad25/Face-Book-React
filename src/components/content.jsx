@@ -1,51 +1,66 @@
-import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
-import moment from 'moment';
+// import moment from 'moment';
+import Post from './post'
 import { useState } from "react";
 
-let Post = () => {
-  // const [profilePhoto,setProfilePhoto] =useState ([])
-  // const [profilePhoto, name, postDate, postText, postImage ]
-  const [postText,setPostText] = useState([])
-  
-  return(
-  <div className='post'>
-    <div className='postHeader'>
-      {/* <img className='profilePhoto' src={profilePhoto} alt="profile" /> */}
-      <div>
-        {/* {name} <br /> */}
-        {/* {moment(postDate).fromNow()} */}
-      </div>
-    </div>
-
-    <div className='postText'>
-      {postText}
-    </div>
-
-    {/* <img className='postImage' src={postImage} alt="post" /> */}
-
-    <hr />
-    <div className='postFooter'>
-      <div><FaRegThumbsUp className="post-icon" />like </div>
-      <div><FaRegCommentAlt className="post-icon" />comment</div>
-      <div><FaShare className="post-icon" />share</div>
-    </div>
-    <hr />
-
-  </div>
-);
-}
 
 
-const content = () => {
+const Content = () => {
+  const [postText, setPostText] = useState("")
+  const [posts, setPosts] = useState({})
+
+
+  const savePost = (e) => {
+    e.preventDefault();
+    console.log("postText", postText)
+
+
+  }
+
   return (
     <div className='page'>
+      <form onClick={savePost}>
+        <input
+          placeholder="what in your mind"
+          onChange={(e) => {
+            setPostText(e.target.value)
+          }}
+        >
+
+        </input>
+        <button type="submit">post</button>
+      </form>
+
+      <div className="container">
+        
+        {posts.map(eachPost => (
+
+        <div className="sub-container" key={eachPost?.name}>
+          <div className="img-div">
+            <img src={eachPost?.image?.thumbnail?.contentUrl?.replace("&pid=News", "")?.replace("pid=News&", "")?.replace("pid=News", "")} alt="" />
+          </div>
+          <div className="data-div">
+            {/* <div>{moment(eachPost?.datePublished)?.format('DD MMMM  h:mm a')}</div> */}
+            <h3>{eachPost?.name}</h3>
+            <p>{eachPost?.description}</p>
+            <a className="red1" href={eachPost?.url} target="_blank" rel="noreferrer">Read More</a>
+          </div>
+        </div>
+
+      ))}
+      </div>
+
+
+
+
+
 
       <Post
-        // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
-        // profilePhoto="./imgs/cp-1_28x28.jpg"
-        // postDate="16 sep 2022"
-        // postImage="./imgs/post1.jfif"
-        postText="No Comments "
+
+      // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
+      // profilePhoto="./imgs/cp-1_28x28.jpg"
+      // postDate="16 sep 2022"
+      // postImage="./imgs/post1.jfif"
+      // postText={postText} >>>>>>>>>>>>>>>>>>>>>>
       />
       {/* <Post
         name="Zoomy Khan"
@@ -77,4 +92,4 @@ const content = () => {
 
 
 
-export default content;
+export default Content;
