@@ -3,7 +3,7 @@ import Post from './post'
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc,getDocs} from "firebase/firestore"; 
+import { collection, addDoc, getDocs, onSnapshot,query,doc } from "firebase/firestore";
 import { useEffect } from 'react';
 import moment from 'moment';
 
@@ -29,46 +29,70 @@ const db = getFirestore(app);
 const Content = () => {
   const [postText, setPostText] = useState("")
   const [posts, setPosts] = useState([])
-useEffect(()=>{
+  
+  useEffect(() => {
 
-  const getData = async () => {
-  const querySnapshot = await getDocs(collection(db, "posts"));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => `, doc.data());
-    
-    
-    setPosts((prev)=>{
-      
-      let newArray = [...prev,doc.data()];
+    const getData = async () => {
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => `, doc.data());
 
-      return newArray
-    });
- 
-  });
+
+        setPosts((prev) => {
+
+          let newArray = [...prev, doc.data()];
+
+          return newArray
+        });
+
+      });
+    }
+
+    // getData() 
+
+    let unsubscribe = null;
+
+    const getRealtimeData = async () => {
+      const q = query(collection(db, "posts"));
+      unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const posts = [];
+        querySnapshot.forEach((doc) => {
+          posts.push(doc.data());
+        });
+
+        setPosts(posts);
+        console.log("posts", posts);
+      });  
+
+    }
+    getRealtimeData();
+
+return () =>{
+  console.log("cleanup")
+  unsubscribe();
 }
 
-getData() 
-},[])
+  }, [])
 
 
 
 
 
-  const savePost = async(e) => {
+  const savePost = async (e) => {
     e.preventDefault();
     console.log("postText", postText)
     try {
       const docRef = await addDoc(collection(db, "posts"), {
         text: postText,
-        createdon: new Date().getTime(), 
+        createdon: new Date().getTime(),
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-    
 
-  } 
+
+  }
 
   return (
     <div className='page'>
@@ -88,22 +112,22 @@ getData()
 
 
       <div className="container">
-        
-        {posts.map((eachPost , i) => (
 
-        <div className="sub-container" key={i}>
+        {posts.map((eachPost, i) => (
 
-          <span>
-            {moment(eachPost?.datePublished).format('Do MMMM h:mm a')}
-          </span>
-          
-          <h3>
-            {eachPost?.text}
-          </h3>
+          <div className="sub-container" key={i}>
 
-        </div>
+            <span>
+              {moment(eachPost?.datePublished).format('Do MMMM h:mm a')}
+            </span>
 
-      ))}
+            <h3>
+              {eachPost?.text}
+            </h3>
+
+          </div>
+
+        ))}
       </div>
 
 
