@@ -3,7 +3,9 @@ import Post from './post'
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc,getDocs} from "firebase/firestore"; 
+import { useEffect } from 'react';
+import moment from 'moment';
 
 
 const firebaseConfig = {
@@ -26,7 +28,30 @@ const db = getFirestore(app);
 
 const Content = () => {
   const [postText, setPostText] = useState("")
-  // const [posts, setPosts] = useState({})
+  const [posts, setPosts] = useState([])
+useEffect(()=>{
+
+  const getData = async () => {
+  const querySnapshot = await getDocs(collection(db, "posts"));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => `, doc.data());
+    
+    
+    setPosts((prev)=>{
+      
+      let newArray = [...prev,doc.data()];
+
+      return newArray
+    });
+ 
+  });
+}
+
+getData() 
+},[])
+
+
+
 
 
   const savePost = async(e) => {
@@ -61,25 +86,25 @@ const Content = () => {
 
 
 
-{/* 
+
       <div className="container">
         
-        {posts.map(eachPost => (
+        {posts.map((eachPost , i) => (
 
-        <div className="sub-container" key={eachPost?.name}>
-          <div className="img-div">
-            <img src={eachPost?.image?.thumbnail?.contentUrl?.replace("&pid=News", "")?.replace("pid=News&", "")?.replace("pid=News", "")} alt="" />
-          </div>
-          <div className="data-div">
-            <div>{moment(eachPost?.datePublished)?.format('DD MMMM  h:mm a')}</div>
-            <h3>{eachPost?.name}</h3>
-            <p>{eachPost?.description}</p>
-            <a className="red1" href={eachPost?.url} target="_blank" rel="noreferrer">Read More</a>
-          </div>
+        <div className="sub-container" key={i}>
+
+          <span>
+            {moment(eachPost?.datePublished).format('Do MMMM h:mm a')}
+          </span>
+          
+          <h3>
+            {eachPost?.text}
+          </h3>
+
         </div>
 
       ))}
-      </div> */}
+      </div>
 
 
 
