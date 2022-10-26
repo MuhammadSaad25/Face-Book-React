@@ -37,10 +37,10 @@ let Post = ({ postText }) => {
                 </div>
 
 
-                <div className='postText'>
+                <h1 className='postText'>
 
                     {postText}
-                </div>
+                </h1>
 
                 {/* <img className='postImage' src={postImage} alt="post" /> */}
 

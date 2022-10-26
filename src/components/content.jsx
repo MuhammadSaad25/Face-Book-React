@@ -115,34 +115,42 @@ return () =>{
 
         {posts.map((eachPost, i) => (
 
-          <div className="sub-container" key={i}>
+          // <div className="sub-container" key={i}>
 
-            <span>
-              {moment(eachPost?.datePublished).format('Do MMMM h:mm a')}
-            </span>
+          //   <span>
+          //     {moment(eachPost?.datePublished).format('Do MMMM h:mm a')}
+          //   </span>
 
-            <h3>
-              {eachPost?.text}
-            </h3>
+          //   <h3>
+          //     {eachPost?.text}
+          //   </h3>
 
-          </div>
-
+          // </div>
+          <Post
+          key={i}
+          // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
+          // profilePhoto="./imgs/cp-1_28x28.jpg"
+          // postDate="16 sep 2022"
+          // postImage="./imgs/post1.jfif"
+          postText={eachPost?.text}
+          />
         ))}
       </div>
 
+{/* <Post/> */}
 
 
 
 
 
-      <Post
+      {/* <Post
 
       // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
       // profilePhoto="./imgs/cp-1_28x28.jpg"
       // postDate="16 sep 2022"
       // postImage="./imgs/post1.jfif"
-      // postText={postText} >>>>>>>>>>>>>>>>>>>>>>
-      />
+      postText={postText} 
+      /> */}
       {/* <Post
         name="Zoomy Khan"
         profilePhoto="./imgs/cp-3_28x28.jpg"
