@@ -1,15 +1,15 @@
 // import { FaBell, FaSearch, FaFacebook, FaHome, FaUserFriends, FaStore, FaChessBoard, FaFacebookMessenger } from "react-icons/fa";
 // import { MdOutlinePersonalVideo } from "react-icons/md";
 // import { TbGridDots } from "react-icons/tb";
-const rightBar = () => {
+import './index.css'
+
+const RightBar = () => {
+
     return (
         <div className="bsb-3">
 
             <div className="contact">
                 <p>Contacts
-                    <i className="fa-solid fa-video v-icon"></i>
-                    <i className="fa-solid fa-magnifying-glass "></i>
-                    <i className="fa-solid fa-ellipsis"></i>
                 </p>
             </div>
 
@@ -63,4 +63,4 @@ const rightBar = () => {
     );
 }
 
-export default rightBar;
+export default RightBar;

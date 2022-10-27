@@ -1,0 +1,27 @@
+.bsb-2p {
+    height: 100%;
+    background-color: #fff;
+    flex: 5;
+  
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    flex-direction: column;
+  }
+  
+  .bsb-2 {
+    height: 40%;
+    background-color: #fff;
+    /* overflow-y: scroll; */
+    flex: 5;
+  
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    flex-direction: column;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  

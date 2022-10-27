@@ -1,4 +1,6 @@
-const storybox = () => {
+import './index.css'
+
+const Storybox = () => {
     return (
         <div className="main-box">
             <div className="story-box1"><img src="./imgs/dp.jpg" alt="" className="stp" width={210} /></div>
@@ -13,4 +15,4 @@ const storybox = () => {
 
 
 
-export default storybox;
+export default Storybox;

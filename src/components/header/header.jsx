@@ -4,9 +4,10 @@ import { TbGridDots } from "react-icons/tb";
 // import { useState } from 'react';
 // import { BsFillMoonFill, BsSun } from "react-icons/bs";
 import { BsFillMoonFill, BsSun } from "react-icons/bs";
+import './index.css'
 
 
-const header = ({ toggleThemeMode, s }) => {
+const Header = ({ toggleThemeMode, s }) => {
     return (
         <div className="header">
             <div className="hsb-1">
@@ -60,4 +61,4 @@ const header = ({ toggleThemeMode, s }) => {
     );
 }
 
-export default header;
+export default Header;

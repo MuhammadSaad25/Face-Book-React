@@ -1,6 +1,7 @@
+import './index.css'
 import { FaDizzy, FaUserFriends, FaStore, FaHistory, FaCaretDown } from "react-icons/fa";
 import { MdGroups, MdOutlinePersonalVideo } from "react-icons/md";
-const leftBar = () => {
+const LeftBar = () => {
     return (
         <div className="bsb-1">
 
@@ -67,4 +68,4 @@ const leftBar = () => {
     );
 }
 
-export default leftBar;
+export default LeftBar;
