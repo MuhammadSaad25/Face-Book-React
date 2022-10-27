@@ -24,7 +24,7 @@ const App = () => {
       <LeftBar />
       <div className="bsb-2p">
         <div className="bsb-2">
-          {/* <Storybox /> */}
+          <Storybox />
           <Content />
         </div>
       </div>
