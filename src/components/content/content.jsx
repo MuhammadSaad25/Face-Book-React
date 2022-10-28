@@ -3,9 +3,9 @@ import Post from '../post/post'
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, getDocs, onSnapshot, query, doc } from "firebase/firestore";
+import { collection, addDoc, getDocs, onSnapshot, query, doc, orderBy, limit,serverTimestamp } from "firebase/firestore";
 import { useEffect } from 'react';
-// import moment from 'moment';
+import moment from 'moment';
 
 
 const firebaseConfig = {
@@ -54,10 +54,11 @@ const Content = () => {
     let unsubscribe = null;
 
     const getRealtimeData = async () => {
-      const q = query(collection(db, "posts"));
+      const q = query(collection(db, "posts"), orderBy("createdon" ,"desc"));
       unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = [];
         querySnapshot.forEach((doc) => {
+          // posts.unshift(doc.data());
           posts.push(doc.data());
         });
 
@@ -85,7 +86,7 @@ const Content = () => {
     try {
       const docRef = await addDoc(collection(db, "posts"), {
         text: postText,
-        createdon: new Date().getTime(),
+        createdon: serverTimestamp(),
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -101,6 +102,7 @@ const Content = () => {
         <input
           placeholder="what in your mind"
           onChange={(e) => {
+            e.preventDefault();
             setPostText(e.target.value)
           }}
         >
@@ -121,8 +123,17 @@ const Content = () => {
             key={i}
             // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
             // profilePhoto="./imgs/cp-1_28x28.jpg"
-            // postDate="16 sep 2022"
             // postImage="./imgs/post1.jfif"
+
+            postDate={moment(
+              (eachPost?.createdon?.seconds) ?
+              eachPost?.createdon?.seconds * 1000
+              :
+              undefined
+            )
+            .fromNow()
+              // .format('Do MMMM, h:mm a')
+            }            
             postText={eachPost?.text}
           />
         ))}

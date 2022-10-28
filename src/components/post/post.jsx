@@ -1,16 +1,20 @@
 import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
 import './index.css'
+// import moment from 'moment';
+
 // import { useState } from 'react'
 
-let Post = ({ postText, postImage, profilePhoto, name }) => {
+let Post = ({ postText, postImage, profilePhoto, name,postDate }) => {
     return (
         <div className='post'>
 
             <div className='postHeader'>
                 {/* <img className='profilePhoto' src={profilePhoto} alt="profile" /> */}
                 <div>
-                    {name} <br />
-                    {/* {moment(postDate).fromNow()} */}
+                    {/* {name} <br /> */}
+                    {/* {createdon}  */}
+                    {postDate}
+                    {/* {moment(createdon).format('Do MMMM, h:mm a')} */}
                 </div>
             </div>
 
