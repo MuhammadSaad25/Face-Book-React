@@ -25,15 +25,31 @@
   margin-bottom: 10px;
 }
 
+.post p{
+  padding-bottom: 10px;
+}
+
 .post .postFooter {
   display: flex;
   justify-content: space-around;
+  padding-top:15px;
+
 }
 
 .post .postFooter div {
   font-size: 22px;
+  cursor: pointer;
+  /* margin-top: 10px; */
   font-weight: 500;
   color: gray;
+  padding:0px 5px;
+display: flex;
+align-items: center;
+}
+
+.post .postFooter div:hover {
+  color: skyblue;
+  /* fill: skyblue; */
 }
 
 .page {
@@ -44,5 +60,5 @@
 
 .post-icon {
   font-size: 25px;
-  fill: gray;
+  /* fill: gray;/ */
 }

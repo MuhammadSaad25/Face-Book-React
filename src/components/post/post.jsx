@@ -7,7 +7,7 @@ let Post = ({ postText, postImage, profilePhoto, name }) => {
         <div className='post'>
 
             <div className='postHeader'>
-                <img className='profilePhoto' src={profilePhoto} alt="profile" />
+                {/* <img className='profilePhoto' src={profilePhoto} alt="profile" /> */}
                 <div>
                     {name} <br />
                     {/* {moment(postDate).fromNow()} */}
@@ -16,11 +16,10 @@ let Post = ({ postText, postImage, profilePhoto, name }) => {
 
 
             <p className='postText'>
-
                 {postText}
             </p>
 
-            <img className='postImage' src={postImage} alt="post" />
+            {/* <img className='post    Image' src={postImage} alt="post" /> */}
 
             <hr />
             <div className='postFooter'>

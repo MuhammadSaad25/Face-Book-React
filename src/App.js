@@ -21,15 +21,17 @@ const App = () => {
     <div className={`App ${themeMode === "dark" ? "dark" : "light"}`}>
       <Header toggleThemeMode={toggleThemeMode} s={themeMode} />
 
-      <LeftBar />
-      <div className="bsb-2p">
-        <div className="bsb-2">
-          <Storybox />
-          <Content />
+      <div className="mainContainer">
+        <LeftBar />
+        <div className="bsb-2p">
+          <div className="bsb-2">
+            <Storybox />
+            <Content />
+          </div>
         </div>
-      </div>
 
-      <RightBar />
+        <RightBar />
+      </div>
     </div>
   );
 };

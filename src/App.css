@@ -22,11 +22,6 @@
   padding: 0;
 }
 
-
-
-
-
-
  *{
   background-color: var(--bg-color);
   margin: 0;
@@ -41,3 +36,6 @@
 }
 
 
+.mainContainer{
+  display: flex;
+}

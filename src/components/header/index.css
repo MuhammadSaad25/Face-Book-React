@@ -37,7 +37,8 @@
   border: none;
   outline: none;
   font-size: 18px;
-  color: black;
+  color: var(--main-color
+  );
   margin-left: 2%;
 }
 
@@ -95,21 +96,6 @@
 .dp>img {
   flex: 7;
   border-radius: 40px;
-}
-
-.body {
-  box-sizing: border-box;
-  padding-top: 20px;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  /* overflow-y: scroll; */
 }
 
 .dp button {

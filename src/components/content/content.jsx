@@ -27,6 +27,7 @@ const db = getFirestore(app);
 
 
 const Content = () => {
+
   const [postText, setPostText] = useState("")
   const [posts, setPosts] = useState([])
 
@@ -118,10 +119,10 @@ const Content = () => {
 
           <Post
             key={i}
-            name="Shëìkh Mühämmâd Ärëéb (شیخ)"
-            profilePhoto="./imgs/cp-1_28x28.jpg"
+            // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
+            // profilePhoto="./imgs/cp-1_28x28.jpg"
             // postDate="16 sep 2022"
-            postImage="./imgs/post1.jfif"
+            // postImage="./imgs/post1.jfif"
             postText={eachPost?.text}
           />
         ))}
