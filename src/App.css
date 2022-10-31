@@ -2,7 +2,6 @@
   --bg-color: rgb(21, 32, 43);
   --main-color: white;
   --icon-color: #fff;
-
 }
 
 .light {
@@ -10,7 +9,6 @@
   --main-color: black;
   --icon-color: #000000;
 }
-
 
 .App {
   height: 100vh;
@@ -22,21 +20,18 @@
   padding: 0;
 }
 
- *{
+* {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-  /* height: 100vh; */
-  /* width: 100vw; */
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 ::-webkit-input-placeholder {
   color: var(--main-color);
 }
 
-
-.mainContainer{
+.mainContainer {
   display: flex;
   margin-top: 10px;
 }

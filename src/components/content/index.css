@@ -12,7 +12,6 @@
 .bsb-2 {
   height: 40%;
   background-color: #fff;
-  /* overflow-y: scroll; */
   flex: 5;
 
   display: flex;
@@ -25,19 +24,18 @@
   width: 0;
 }
 
-.page form{
+.page form {
   margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .page form input {
-  /* flex: 1; */
   width: 50%;
 
   height: 100%;
   border: var(--main-color) 2px solid;
-border-radius: 20px;
+  border-radius: 20px;
   padding-left: 15px;
   padding-bottom: 5px;
 
@@ -48,19 +46,16 @@ border-radius: 20px;
 }
 
 .page form button {
-  /* flex: 1; */
   width: 15%;
   padding-bottom: 5px;
-  
+
   height: 100%;
   border: var(--main-color) 2px solid;
-  /* outline: none; */
-border-radius: 20px;
+  border-radius: 20px;
   font-size: 18px;
   color: var(--main-color);
   margin-left: 2%;
 }
-
 
 .container {
   display: flex;
@@ -69,5 +64,3 @@ border-radius: 20px;
   width: 100%;
   overflow-y: scroll;
 }
-
-

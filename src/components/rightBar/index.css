@@ -1,36 +1,34 @@
 .bsb-3 {
-    height: 85vh;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.419);
-    border-radius: 5px;
-    margin: 0 10px;
-    padding: 10px 0;
-    flex: 2;
-  
-    display: flex;
-    flex-direction: column;
-  }
+  height: 85vh;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.419);
+  border-radius: 5px;
+  margin: 0 10px;
+  padding: 10px 0;
+  flex: 2;
 
-  .contact>p {
-    color: gray;
-    margin-top: 5%;
-    padding-left: 5%;
-    font-weight: 500;
-    font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact > p {
+  color: gray;
+  margin-top: 5%;
+  padding-left: 5%;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.contact > p > .v-icon {
+  margin-left: 30%;
+}
+
+.contact > p > i {
+  margin-left: 5%;
+}
+
+/* mobile >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media screen and (max-width: 430px) {
+  .bsb-3 {
+    display: none;
   }
-  
-  .contact>p>.v-icon {
-    margin-left: 30%;
-  
-  }
-  
-  .contact>p>i {
-    margin-left: 5%;
-  
-  }
-  
-  /* mobile >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-  @media screen and (max-width: 430px) {
-    .bsb-3{
-      display: none;
-    }
-  }
+}

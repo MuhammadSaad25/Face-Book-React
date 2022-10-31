@@ -12,17 +12,16 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.postHeader div{
+.postHeader div {
   display: flex;
 }
 .postHeader div button {
   width: 100%;
   padding: 3px;
-  
+
   height: 100%;
   border: var(--main-color) 2px solid;
-  /* outline: none; */
-border-radius: 20px;
+  border-radius: 20px;
   font-size: 16px;
   color: var(--main-color);
   margin: 5px;
@@ -41,31 +40,28 @@ border-radius: 20px;
   margin-bottom: 10px;
 }
 
-.post p{
+.post p {
   padding-bottom: 10px;
 }
 
 .post .postFooter {
   display: flex;
   justify-content: space-around;
-  padding-top:15px;
-
+  padding-top: 15px;
 }
 
 .post .postFooter div {
   font-size: 22px;
   cursor: pointer;
-  /* margin-top: 10px; */
   font-weight: 500;
   color: gray;
-  padding:0px 5px;
-display: flex;
-align-items: center;
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
 }
 
 .post .postFooter div:hover {
   color: skyblue;
-  /* fill: skyblue; */
 }
 
 .page {
@@ -76,5 +72,4 @@ align-items: center;
 
 .post-icon {
   font-size: 25px;
-  /* fill: gray;/ */
 }
