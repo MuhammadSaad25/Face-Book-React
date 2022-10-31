@@ -3,7 +3,12 @@ import Post from '../post/post'
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, getDocs, onSnapshot, query, doc, orderBy, limit,serverTimestamp } from "firebase/firestore";
+import {
+  collection, addDoc, getDocs,
+  onSnapshot, query, doc,
+  orderBy, limit, serverTimestamp,
+  deleteDoc
+} from "firebase/firestore";
 import { useEffect } from 'react';
 import moment from 'moment';
 
@@ -54,12 +59,13 @@ const Content = () => {
     let unsubscribe = null;
 
     const getRealtimeData = async () => {
-      const q = query(collection(db, "posts"), orderBy("createdon" ,"desc"));
+      const q = query(collection(db, "posts"), orderBy("createdon", "desc"));
       unsubscribe = onSnapshot(q, (querySnapshot) => {
         const posts = [];
         querySnapshot.forEach((doc) => {
           // posts.unshift(doc.data());
-          posts.push(doc.data());
+          // posts.push(doc.data());
+          posts.push({ id: doc.id, ...doc.data() });
         });
 
         setPosts(posts);
@@ -93,8 +99,8 @@ const Content = () => {
       console.error("Error adding document: ", e);
     }
 
-
   }
+
 
   return (
     <div className='page'>
@@ -127,13 +133,14 @@ const Content = () => {
 
             postDate={moment(
               (eachPost?.createdon?.seconds) ?
-              eachPost?.createdon?.seconds * 1000
-              :
-              undefined
+                eachPost?.createdon?.seconds * 1000
+                :
+                undefined
             )
-            .fromNow()
+              .fromNow()
               // .format('Do MMMM, h:mm a')
-            }            
+            }
+            id={eachPost?.id}
             postText={eachPost?.text}
           />
         ))}

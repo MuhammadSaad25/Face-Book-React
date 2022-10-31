@@ -1,6 +1,7 @@
 import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
 import './index.css'
 // import moment from 'moment';
+import { MdDeleteForever } from "react-icons/md";
 
 import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
@@ -20,7 +21,34 @@ import {
 } from "firebase/firestore";
 
 
-let Post = ({ postText, postImage, profilePhoto, name, postDate }) => {
+const firebaseConfig = {
+    apiKey: "AIzaSyAxYIc8w-tPw_MPCv7033gzFY7KUCw1iCM",
+    authDomain: "fakebook-database.firebaseapp.com",
+    projectId: "fakebook-database",
+    storageBucket: "fakebook-database.appspot.com",
+    messagingSenderId: "96515663185",
+    appId: "1:96515663185:web:d2ebdebc4fbe862ab31f70"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+
+
+
+let Post = (props) => {
+
+    const deletePost = async () => {
+        // console.log("postid: ", props.id);
+
+        await deleteDoc(doc(db, "posts", props.id));
+    };
+
+
     return (
         <div className='post'>
 
@@ -29,18 +57,20 @@ let Post = ({ postText, postImage, profilePhoto, name, postDate }) => {
                 <div>
                     {/* {name} <br /> */}
                     {/* {createdon}  */}
-                    {postDate}
+                    {props.postDate}
                     {/* {moment(createdon).format('Do MMMM, h:mm a')} */}
                 </div>
                 <div>
-                    <button>Delete</button>
-                    <button>Delete</button>
+                <button onClick={() => deletePost(props.id)}>
+          <MdDeleteForever />
+        </button>
+                    <button>Edit</button>
                 </div>
             </div>
 
 
             <p className='postText'>
-                {postText}
+                {props.postText}
             </p>
 
             {/* <img className='post    Image' src={postImage} alt="post" /> */}
