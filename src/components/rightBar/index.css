@@ -28,3 +28,9 @@
   
   }
   
+  /* mobile >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+  @media screen and (max-width: 430px) {
+    .bsb-3{
+      display: none;
+    }
+  }

@@ -2,7 +2,7 @@
   box-sizing: border-box;
   background-color: var(--bg-color);
   flex: 0.9;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.150);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
   padding-top: 0.5%;
   width: 100vw;
 
@@ -37,8 +37,7 @@
   border: none;
   outline: none;
   font-size: 18px;
-  color: var(--main-color
-  );
+  color: var(--main-color);
   margin-left: 2%;
 }
 
@@ -62,7 +61,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .hsb-4 div {
@@ -79,7 +78,7 @@
   font-size: 22px;
 }
 
-.hsb-4>button {
+.hsb-4 > button {
   color: var(--main-color);
   background-color: var(--bg-color);
 }
@@ -93,7 +92,7 @@
   justify-content: end;
 }
 
-.dp>img {
+.dp > img {
   flex: 7;
   border-radius: 40px;
 }
@@ -107,3 +106,28 @@
   font-size: 30px;
 }
 
+/* Mobile>>>>>>>>>>>> */
+
+@media screen and (max-width: 430px) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hsb-2 {
+    width: 60%;
+    height: 0%;
+  }
+
+  .hsb-2 .hsb2-input {
+    /* flex: 1 1; */
+    width: 65%;
+  }
+
+  .hsb-3 {
+    display: none;
+  }
+
+  .hsb-4 {
+    width: 40%;
+  }
+}

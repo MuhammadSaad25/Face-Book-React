@@ -2,9 +2,25 @@ import { FaRegThumbsUp, FaRegCommentAlt, FaShare } from "react-icons/fa";
 import './index.css'
 // import moment from 'moment';
 
-// import { useState } from 'react'
+import { useEffect, useState } from "react";
+import { initializeApp } from "firebase/app";
 
-let Post = ({ postText, postImage, profilePhoto, name,postDate }) => {
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    onSnapshot,
+    query,
+    serverTimestamp,
+    orderBy,
+    deleteDoc,
+    updateDoc,
+} from "firebase/firestore";
+
+
+let Post = ({ postText, postImage, profilePhoto, name, postDate }) => {
     return (
         <div className='post'>
 
@@ -15,6 +31,10 @@ let Post = ({ postText, postImage, profilePhoto, name,postDate }) => {
                     {/* {createdon}  */}
                     {postDate}
                     {/* {moment(createdon).format('Do MMMM, h:mm a')} */}
+                </div>
+                <div>
+                    <button>Delete</button>
+                    <button>Delete</button>
                 </div>
             </div>
 

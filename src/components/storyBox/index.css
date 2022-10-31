@@ -2,7 +2,7 @@
     height: 35%;
     align-content: center;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.447);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     padding-top: 10px;
   
     display: flex;
@@ -16,14 +16,41 @@
   .story-box3,
   .story-box4,
   .story-box5 {
+    display: flex;
+    align-items: center;
     height: 100%;
     width: 40%;
     border-radius: 30px;
-    text-align: center;
+    /* text-align: center; */
+    margin: 5px;
+
   }
   
   .stp {
-    border-radius: 30px;
+    border-radius: 10px;
+    width: 100%;
   }
   
+  @media screen and (max-width: 430px) {
+    .main-box {
+      width: 100vw;
+      margin: 0px;
+      /* overflow: scroll; */
+      /* padding: 20px; */
+      display: flex;
+      justify-content: start;
+      /* justify-content: center; */
+      align-content: center;}
   
+      .story-box1, .story-box2, .story-box3, .story-box4, .story-box5 {
+        height: 100%;
+        width: 40%;
+        border-radius: 30px;
+        margin: 2px;
+        /* text-align: center; */
+    }
+  
+    .stp{
+      width: 100%;
+    }
+  }
