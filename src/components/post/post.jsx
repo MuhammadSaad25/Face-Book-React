@@ -64,17 +64,17 @@ let Post = (props) => {
   return (
     <div className="post">
       <div className="postHeader">
-        {/* <img className='profilePhoto' src={profilePhoto} alt="profile" /> */}
+
         <div>
-          {/* {name} <br /> */}
-          {/* {createdon}  */}
           {props.postDate}
-          {/* {moment(createdon).format('Do MMMM, h:mm a')} */}
         </div>
+
         <div>
+
           <button onClick={() => deletePost(props.id)}>
             <MdDeleteForever />
           </button>
+
           {editing.editingId === props?.id ? null : (
             <button
               onClick={() => {
@@ -87,11 +87,14 @@ let Post = (props) => {
               <FiEdit />
             </button>
           )}
+
         </div>
+
       </div>
 
       {props.id === editing.editingId ? (
         <form onSubmit={updatePost}>
+
           <input
             type="text"
             value={editing.editingText}
@@ -103,31 +106,42 @@ let Post = (props) => {
             }}
             placeholder="please enter updated value"
           />
+
           <button type="submit">Update</button>
+
         </form>
+
       ) : (
+
         <p className="post" target="_blank" rel="noreferrer">
           {props?.postText}
         </p>
+
       )}
-      {/* {props.postImage} */}
+
       <img className='postImage' src={props?.postImage} alt="post" />
 
       <hr />
+
       <div className="postFooter">
+
         <div>
           <FaRegThumbsUp className="post-icon" />
           like
         </div>
+
         <div>
           <FaRegCommentAlt className="post-icon" />
           comment
         </div>
+
         <div>
           <FaShare className="post-icon" />
           share
         </div>
+
       </div>
+
     </div>
   );
 };
