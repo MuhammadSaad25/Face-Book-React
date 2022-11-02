@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import { useEffect } from 'react';
 import moment from 'moment';
+import axios from "axios";
 
 
 const firebaseConfig = {
@@ -35,6 +36,7 @@ const Content = () => {
 
   const [postText, setPostText] = useState("")
   const [posts, setPosts] = useState([])
+  const [file, setFile] = useState(null)
 
   useEffect(() => {
 
@@ -88,16 +90,48 @@ const Content = () => {
 
   const savePost = async (e) => {
     e.preventDefault();
-    console.log("postText", postText)
-    try {
-      const docRef = await addDoc(collection(db, "posts"), {
-        text: postText,
-        createdon: serverTimestamp(),
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+
+    const cloudinaryData = new FormData();
+    cloudinaryData.append("file", file);
+    cloudinaryData.append("upload_preset", "postpicture");
+    cloudinaryData.append("cloud_name", "dixrdohp4");
+    console.log(cloudinaryData);
+    axios.post(`https://api.cloudinary.com/v1_1/dixrdohp4/image/upload`,
+      cloudinaryData,
+      {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+      .then(async res => {
+
+        console.log("from then", res.data);
+
+        console.log("postText", postText)
+        try {
+          const docRef = await addDoc(collection(db, "posts"), {
+            text: postText,
+            createdon: serverTimestamp(),
+            img: res?.data?.url,
+          });
+          console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+
+      })
+      .catch(err => {
+        console.log("from catch", err);
+      })
+
+
+
+
+
+
+
+
+
+
+
 
   }
 
@@ -105,15 +139,23 @@ const Content = () => {
   return (
     <div className='page'>
       <form onSubmit={savePost}>
+
         <input
           placeholder="what in your mind"
           onChange={(e) => {
             e.preventDefault();
             setPostText(e.target.value)
           }}
-        >
+        />
 
-        </input>
+        <input type="file" name='postpicture'
+          onChange={(e) => {
+            console.log(e.currentTarget.files[0])
+
+            setFile(e.currentTarget.files[0])
+          }}
+        />
+
         <button type="submit">post</button>
       </form>
 
@@ -129,7 +171,7 @@ const Content = () => {
             key={i}
             // name="Shëìkh Mühämmâd Ärëéb (شیخ)"
             // profilePhoto="./imgs/cp-1_28x28.jpg"
-            // postImage="./imgs/post1.jfif"
+            postImage={eachPost?.img}
 
             postDate={moment(
               (eachPost?.createdon?.seconds) ?

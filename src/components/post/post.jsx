@@ -110,8 +110,8 @@ let Post = (props) => {
           {props?.postText}
         </p>
       )}
-
-      {/* <img className='post    Image' src={postImage} alt="post" /> */}
+      {/* {props.postImage} */}
+      <img className='postImage' src={props?.postImage} alt="post" />
 
       <hr />
       <div className="postFooter">
