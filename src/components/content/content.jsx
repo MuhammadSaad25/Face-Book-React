@@ -85,9 +85,6 @@ const Content = () => {
   }, [])
 
 
-
-
-
   const savePost = async (e) => {
     e.preventDefault();
 
@@ -122,17 +119,6 @@ const Content = () => {
         console.log("from catch", err);
       })
 
-
-
-
-
-
-
-
-
-
-
-
   }
 
 
@@ -148,6 +134,7 @@ const Content = () => {
             setPostText(e.target.value)
           }}
         />
+
         <label name="postpicture">
           <input
             className='imgInput'
@@ -161,14 +148,11 @@ const Content = () => {
               setFile(e.currentTarget.files[0])
             }}
           />
-          <FcPicture/>
+          <FcPicture />
         </label>
 
         <button type="submit">post</button>
       </form>
-
-
-
 
       <div className="container">
 
