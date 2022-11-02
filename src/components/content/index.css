@@ -29,8 +29,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.page form input {
+.textInput {
   width: 50%;
 
   height: 100%;
@@ -45,6 +46,25 @@
   margin-left: 2%;
 }
 
+.imgInput[type="file"]{
+  display: none;
+}
+
+label{
+  width: 10%;
+  text-align: center;
+  height: 100%;
+  /* border: var(--main-color) 2px solid; */
+  border-radius: 20px;
+  /* padding-left: 15px; */
+  /* padding-bottom: 5px; */
+
+  outline: none;
+  font-size: 28px;
+  color: var(--main-color);
+  /* margin-left: 2%; */
+}
+
 .page form button {
   width: 15%;
   padding-bottom: 5px;
@@ -54,7 +74,7 @@
   border-radius: 20px;
   font-size: 18px;
   color: var(--main-color);
-  margin-left: 2%;
+  /* margin-left: 2%; */
 }
 
 .container {

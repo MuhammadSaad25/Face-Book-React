@@ -12,7 +12,7 @@ import {
 import { useEffect } from 'react';
 import moment from 'moment';
 import axios from "axios";
-
+import { FcPicture } from "react-icons/fc";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAxYIc8w-tPw_MPCv7033gzFY7KUCw1iCM",
@@ -141,20 +141,28 @@ const Content = () => {
       <form onSubmit={savePost}>
 
         <input
+          className='textInput'
           placeholder="what in your mind"
           onChange={(e) => {
             e.preventDefault();
             setPostText(e.target.value)
           }}
         />
+        <label name="postpicture">
+          <input
+            className='imgInput'
+            type="file"
+            name='postpicture'
+            accept='image/*'
+            // placeholder='picture'
+            onChange={(e) => {
+              console.log(e.currentTarget.files[0])
 
-        <input type="file" name='postpicture'
-          onChange={(e) => {
-            console.log(e.currentTarget.files[0])
-
-            setFile(e.currentTarget.files[0])
-          }}
-        />
+              setFile(e.currentTarget.files[0])
+            }}
+          />
+          <FcPicture/>
+        </label>
 
         <button type="submit">post</button>
       </form>
